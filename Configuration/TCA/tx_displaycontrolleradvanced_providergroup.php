@@ -237,5 +237,3 @@ return array(
 		$_EXTKEY . '_2' => array('showitem' => 'tx_displaycontroller_datafilter2, tx_displaycontroller_emptyfilter2'),
 	)
 );
-
-?>

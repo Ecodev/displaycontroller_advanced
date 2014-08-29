@@ -19,11 +19,3 @@
 class tx_displaycontrolleradvanced_pi2 extends tx_displaycontrolleradvanced {
 	public $scriptRelPath	= 'pi2/class.tx_displaycontrolleradvanced_pi2.php';	// Path to this script relative to the extension dir.
 }
-
-
-
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/displaycontroller_advanced/pi2/class.tx_displaycontrolleradvanced_pi2.php'])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/displaycontroller_advanced/pi2/class.tx_displaycontrolleradvanced_pi2.php']);
-}
-
-?>

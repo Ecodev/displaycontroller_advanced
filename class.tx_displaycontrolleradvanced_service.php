@@ -40,11 +40,3 @@ class tx_displaycontrolleradvanced_service extends tx_tesseract_controllerbase {
         }
     }
 }
-
-
-
-if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/displaycontroller/class.tx_displaycontroller_service.php'])	{
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/displaycontroller/class.tx_displaycontroller_service.php']);
-}
-
-?>
