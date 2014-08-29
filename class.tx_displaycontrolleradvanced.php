@@ -1,39 +1,25 @@
 <?php
-/***************************************************************
-*  Copyright notice
-*
-*  (c) 2008-2010 Francois Suter (Cobweb) <typo3@cobweb.ch>
-*  All rights reserved
-*
-*  This script is part of the TYPO3 project. The TYPO3 project is
-*  free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation; either version 2 of the License, or
-*  (at your option) any later version.
-*
-*  The GNU General Public License can be found at
-*  http://www.gnu.org/copyleft/gpl.html.
-*
-*  This script is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  This copyright notice MUST APPEAR in all copies of the script!
-***************************************************************/
+
+/**
+ * This file is part of the TYPO3 CMS project.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
+ */
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+
+require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('tesseract', 'base/class.tx_tesseract_picontrollerbase.php'));
 
 /**
  * Plugin 'Display Controller (cached)' for the 'displaycontrolleradvanced' extension.
- *
- * @author		Francois Suter (Cobweb) <typo3@cobweb.ch>
- * @package		TYPO3
- * @subpackage	tx_displaycontroller
- *
- * $Id: class.tx_displaycontrolleradvanced.php 59542 2012-03-22 16:17:35Z francois $
  */
-
-require_once(t3lib_extMgm::extPath('tesseract', 'base/class.tx_tesseract_picontrollerbase.php'));
-
 class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 	public $prefixId = 'tx_displaycontroller'; // Same as class name
 	public $extKey		= 'displaycontroller_advanced';	// The extension key.
@@ -115,14 +101,14 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 			// Merge the configuration of the pi* plugin with the general configuration
 			// defined with plugin.tx_displaycontrolleradvanced (if defined)
 		if (isset($GLOBALS['TSFE']->tmpl->setup['plugin.'][$this->prefixId . '.'])) {
-			$this->conf = t3lib_div::array_merge_recursive_overrule($GLOBALS['TSFE']->tmpl->setup['plugin.'][$this->prefixId.'.'], $conf);
+			$this->conf = GeneralUtility::array_merge_recursive_overrule($GLOBALS['TSFE']->tmpl->setup['plugin.'][$this->prefixId.'.'], $conf);
 		}
 		else {
 			$this->conf = $conf;
 		}
 
 			// Override standard piVars definition
-		$this->piVars = t3lib_div::_GPmerged($this->prefixId);
+		$this->piVars = GeneralUtility::_GPmerged($this->prefixId);
 			// Finally load some additional data into the parser
 		$this->loadParserData();
 	}
@@ -139,12 +125,12 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 			// Load specific configuration into the extra data
 		$extraData = array();
 		if (is_array($this->conf['context.'])) {
-			$extraData = t3lib_div::removeDotsFromTS($this->conf['context.']);
+			$extraData = GeneralUtility::removeDotsFromTS($this->conf['context.']);
 		}
 			// Allow loading of additional extra data from hooks
 		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['setExtraDataForParser'])) {
 			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['setExtraDataForParser'] as $className) {
-				$hookObject = &t3lib_div::getUserObj($className);
+				$hookObject = & GeneralUtility::getUserObj($className);
 				$extraData = $hookObject->setExtraDataForParser($extraData, $this);
 			}
 		}
@@ -322,7 +308,7 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 			$debugger = NULL;
 				// If a custom debugging class is declared, get an instance of it
 			if (!empty($this->extensionConfiguration['debugger'])) {
-				$debugger = t3lib_div::makeInstance(
+				$debugger = GeneralUtility::makeInstance(
 					$this->extensionConfiguration['debugger'],
 					$GLOBALS['TSFE']->getPageRenderer()
 				);
@@ -330,7 +316,7 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 				// If no custom debugger class is defined or if it was not of the right type,
 				// instantiate the default class
 			if ($debugger === NULL || !($debugger instanceof tx_displaycontroller_debugger)) {
-				$debugger = t3lib_div::makeInstance(
+				$debugger = GeneralUtility::makeInstance(
 					'tx_displaycontroller_debugger',
 					$GLOBALS['TSFE']->getPageRenderer()
 				);
@@ -415,7 +401,7 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 	 */
 	protected function initFilter($key = '') {
 		$filter = array();
-		$clearCache = isset($this->piVars['clear_cache']) ? $this->piVars['clear_cache'] : t3lib_div::_GP('clear_cache');
+		$clearCache = isset($this->piVars['clear_cache']) ? $this->piVars['clear_cache'] : GeneralUtility::_GP('clear_cache');
 		// If cache is not cleared, retrieve cached filter
 		if (empty($clearCache)) {
 			if (empty($key)) {
@@ -430,7 +416,7 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 		// Declare hook for extending the initialisation of the filter
 		if (is_array($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['extendInitFilter'])) {
 			foreach ($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['extendInitFilter'] as $className) {
-				$hookObject = t3lib_div::getUserObj($className);
+				$hookObject = GeneralUtility::getUserObj($className);
 				$filter = $hookObject->extendInitFilter($filter, $this);
 			}
 		}
@@ -451,7 +437,7 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 			$GLOBALS['TSFE']->register['sds.totalCount'] = $structure['totalCount'];
 			$GLOBALS['TSFE']->register['sds.count'] = $structure['count'];
 				// Create a local cObject for handling the redirect configuration
-			$localCObj = t3lib_div::makeInstance('tslib_cObj');
+			$localCObj = GeneralUtility::makeInstance('tslib_cObj');
 				// If there's at least one record, load it into the cObject
 			if ($structure['count'] > 0) {
 				$localCObj->start($structure['records'][0]);
@@ -481,7 +467,7 @@ class tx_displaycontrolleradvanced extends tx_tesseract_picontrollerbase {
 						$redirectConfiguration['url.']['returnLast'] = 'url';
 						$url = $localCObj->typoLink('', $redirectConfiguration['url.']);
 					}
-					header('Location: ' . t3lib_div::locationHeaderUrl($url));
+					header('Location: ' . GeneralUtility::locationHeaderUrl($url));
 				}
 			}
 		}

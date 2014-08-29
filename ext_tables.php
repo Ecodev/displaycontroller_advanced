@@ -4,8 +4,6 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-t3lib_div::loadTCA('tt_content');
-
 	// Add new columns to tt_content
 	//
 	// A note about MM_match_fields:
@@ -58,7 +56,7 @@ $tempColumns = array(
 		)
 	),
 );
-t3lib_extMgm::addTCAcolumns('tt_content', $tempColumns, 1);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns, 1);
 
 	// Define showitem property for both plug-ins
 $showItem = 'CType;;4;button,hidden,1-1-1, header;;3;;2-2-2,linkToTop;;;;3-3-3';
@@ -78,29 +76,29 @@ if (TYPO3_MODE == 'BE' ||
 	(TYPO3_MODE == 'FE' && isset($GLOBALS['BE_USER']) && method_exists($GLOBALS['BE_USER'], 'isFrontendEditingActive')  && $GLOBALS['BE_USER']->isFrontendEditingActive())
 ) {
 	$icons = array(
-		'type-controller' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/displaycontroller_advanced_typeicon.png',
-		'providergroup' => t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/tx_displaycontrolleradvanced_providergroup.png',
+		'type-controller' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/displaycontroller_advanced_typeicon.png',
+		'providergroup' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/tx_displaycontrolleradvanced_providergroup.png',
 	);
 	t3lib_SpriteManager::addSingleIcons($icons, $_EXTKEY);
 }
 
 	// Add context sensitive help (csh) for the new fields
-t3lib_extMgm::addLLrefForTCAdescr('tt_content', 'EXT:' . $_EXTKEY . '/locallang_csh_ttcontent.xml');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tt_content', 'EXT:' . $_EXTKEY . '/locallang_csh_ttcontent.xml');
 
 	// Register plug-ins (pi1 is cached, pi2 is not cached)
-t3lib_extMgm::addPlugin(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(
 		'LLL:EXT:displaycontroller_advanced/locallang_db.xml:tt_content.CType_pi1',
 		$_EXTKEY . '_pi1',
-		t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/displaycontroller_advanced_typeicon.png'
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/displaycontroller_advanced_typeicon.png'
 	),
 	'CType'
 );
-t3lib_extMgm::addPlugin(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
 	array(
 		'LLL:EXT:displaycontroller_advanced/locallang_db.xml:tt_content.CType_pi2',
 		$_EXTKEY . '_pi2',
-		t3lib_extMgm::extRelPath($_EXTKEY) . 'Resources/Public/Images/displaycontroller_advanced_typeicon.png'
+		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/displaycontroller_advanced_typeicon.png'
 	),
 	'CType'
 );
@@ -109,15 +107,14 @@ t3lib_extMgm::addPlugin(
 #$T3_VAR['EXT']['tesseract']['controller_mm_tables'][] = 'tx_displaycontrolleradvanced_components_mm';
 
 	// Define main TCA for table tx_displaycontrolleradvanced_providergroup
-t3lib_extMgm::allowTableOnStandardPages('tx_displaycontrolleradvanced_providergroup');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_displaycontrolleradvanced_providergroup');
 
 	// ATM, defines here allowed data type + wizard
-t3lib_div::loadTCA('tx_displaycontrolleradvanced_providergroup');
  $GLOBALS['TCA']['tx_displaycontrolleradvanced_providergroup']['columns']['tx_displaycontroller_provider']['config']['allowed'] .= ',tx_dataquery_queries';
  $GLOBALS['TCA']['tx_displaycontrolleradvanced_providergroup']['columns']['tx_displaycontroller_datafilter']['config']['allowed'] .= ',tx_datafilter_filters';
  $GLOBALS['TCA']['tx_displaycontrolleradvanced_providergroup']['columns']['tx_displaycontroller_datafilter2']['config']['allowed'] .= ',tx_datafilter_filters';
 
-if (t3lib_extMgm::isLoaded('tagpackprovider')) {
+if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('tagpackprovider')) {
 	 $GLOBALS['TCA']['tx_displaycontrolleradvanced_providergroup']['columns']['tx_displaycontroller_provider2']['config']['allowed'] .= ',tx_tagpackprovider_selections';
 }
 
