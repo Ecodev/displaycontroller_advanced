@@ -1,0 +1,12 @@
+{
+	"name": "ecodev/displaycontroller-advanced",
+	"type": "typo3-cms-extension",
+	"description": "This extension manages relations between Tesseract components and produces output in the FE.  More info on http://www.typo3-tesseract.com",
+	"homepage": "https://github.com/Ecodev/displaycontroller_advanced",
+	"license": ["GPL-2.0+"],
+	"version": "0.4.0-dev",
+	"keywords": ["TYPO3 CMS", "tesseract", "generic listing"],
+	"support": {
+		"issues": "https://github.com/Ecodev/displaycontroller_advanced/issues"
+	}
+}
