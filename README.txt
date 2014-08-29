@@ -1,0 +1,1 @@
+Tesseract Data Consumer based on PHP templates. Refer to the manual for more details.

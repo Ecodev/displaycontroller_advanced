@@ -1,0 +1,10 @@
+# customsubcategory=debugging=LLL:EXT:displaycontroller_advanced/locallang.xml:debugging
+
+# cat=basic/debugging/; type=options[LLL:EXT:displaycontroller_advanced/locallang.xml:config_debug.none=none,LLL:EXT:displaycontroller_advanced/locallang.xml:config_debug.output=output,LLL:EXT:displaycontroller_advanced/locallang.xml:config_debug.devlog=devlog,LLL:EXT:displaycontroller_advanced/locallang.xml:config_debug.both=both]; label=LLL:EXT:displaycontroller_advanced/locallang.xml:config_debug
+debug = none
+
+# cat=basic/debugging/; type=options[LLL:EXT:displaycontroller_advanced/locallang.xml:minDebugLevel.ok=-1,LLL:EXT:displaycontroller_advanced/locallang.xml:minDebugLevel.info=0,LLL:EXT:displaycontroller_advanced/locallang.xml:minDebugLevel.notice=1,LLL:EXT:displaycontroller_advanced/locallang.xml:minDebugLevel.warning=2,LLL:EXT:displaycontroller_advanced/locallang.xml:minDebugLevel.error=3]; label=LLL:EXT:displaycontroller_advanced/locallang.xml:minDebugLevel
+minDebugLevel = none
+
+# cat=basic/debugging/; type=string; label=LLL:EXT:displaycontroller_advanced/locallang.xml:debugger
+debugger =

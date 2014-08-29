@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'displaycontroller'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.CType_pi1">Display Controller Advanced (cached)</label>
+			<label index="tt_content.CType_pi2">Display Controller Advanced (not cached)</label>
+			<label index="tx_displaycontrolleradvanced_providergroup">Group of providers</label>
+			<label index="tt_content.tx_displaycontrolleradvanced_providergroup">Group of providers</label>
+		</languageKey>
+		<languageKey index="fr" type="array">
+			<label index="tt_content.CType_pi1">Contrôleur d'affichage avancé (avec cache)</label>
+			<label index="tt_content.CType_pi2">Contrôleur d'affichage avancé (hors cache)</label>
+			<label index="tx_displaycontrolleradvanced_providergroup">Groupe de provider</label>
+			<label index="tt_content.tx_displaycontrolleradvanced_providergroup">Groupe de provider</label>
+		</languageKey>
+	</data>
+</T3locallang>

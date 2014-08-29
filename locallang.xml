@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for extension 'displaycontroller_advanced'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="debugging">Debugging</label>
+			<label index="config_debug">Debug: Choose debug settings. Debugging output can be directed to the controller's output (e.g. the frontend), to the Developer's Log (requires an extension like "devlog") or both.</label>
+			<label index="config_debug.none">None</label>
+			<label index="config_debug.output">To output</label>
+			<label index="config_debug.devlog">To Developer's Log</label>
+			<label index="config_debug.both">To both</label>
+			<label index="minDebugLevel">Minimum level for debugging: Messages with a severity below the chosen limit will not be logged. This helps avoid clogging the output.</label>
+			<label index="minDebugLevel.ok">Success</label>
+			<label index="minDebugLevel.info">Information</label>
+			<label index="minDebugLevel.notice">Notice</label>
+			<label index="minDebugLevel.warning">Warning</label>
+			<label index="minDebugLevel.error">Error</label>
+			<label index="debugger">Debug output class: Enter a class name to replace the default debugging output class. The class must be autoloaded and extend tx_displaycontroller_debugger.</label>
+			<label index="exception.no_component">No component of type %1$s and level %2$d found.</label>
+			<label index="exception.no_provider">No provider defined.</label>
+			<label index="exception.no_filter">No data filter found.</label>
+			<label index="exception.incompatible_providers">Incompatible structures between primary and secondary providers.</label>
+			<label index="error.no_primary_provider">Primary Data Provider not found</label>
+			<label index="error.primary_filter">Primary Data Filter not found</label>
+			<label index="error.no_secondary_provider">Secondary Data Provider not found</label>
+			<label index="error.get_filter">Error getting filter.</label>
+			<label index="error.primary_provider_interrupt">Primary provider set passStructure to false</label>
+			<label index="error.secondary_provider_interrupt">Secondary provider set passStructure to false</label>
+			<label index="error.incompatible_provider_consumer">Incompatible structures between primary provider and consumer.</label>
+			<label index="error.no_consumer">Data Consumer not found</label>
+			<label index="info.primary_filter">Primary filter</label>
+			<label index="info.secondary_filter">Secondary filter</label>
+			<label index="info.calculated_filter">Calculated filter structure</label>
+			<label index="pi1_title">Display Controller Advanced (cached)</label>
+			<label index="pi1_plus_wiz_description">Create a fully-cached Display Controller Advanced.</label>
+			<label index="pi2_title">Display Controller Advanced (not cached)</label>
+			<label index="pi2_plus_wiz_description">Create a non-cached Display Controller Advanced. This should be chosen only if needed, for example in case of a search function.</label>
+		</languageKey>
+	</data>
+</T3locallang>
