@@ -2,7 +2,7 @@
 if (!defined ('TYPO3_MODE')) 	die ('Access denied.');
 
 return array(
-	'ctrl' => array (
+	'ctrl' => [
 		'title'     => 'LLL:EXT:displaycontroller_advanced/locallang_db.xml:tx_displaycontrolleradvanced_providergroup',
 		'label'     => 'title',
 		'tstamp'    => 'tstamp',
@@ -12,14 +12,14 @@ return array(
 		'origUid' => 't3_origuid',
 		'default_sortby' => 'ORDER BY uid',
 		'delete' => 'deleted',
-		'enablecolumns' => array (
+		'enablecolumns' => [
 			'disabled' => 'hidden',
-		),
-		'typeicon_classes' => array(
+		],
+		'typeicon_classes' => [
 			'default' => 'extensions-displaycontroller_advanced-providergroup',
-		),
+		],
 		'dividers2tabs' => 1,
-	),
+	],
 	'feInterface' => array (
 		'fe_admin_fieldList' => 'hidden, title, description, sql_query, t3_mechanisms',
 	),
@@ -83,7 +83,9 @@ return array(
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_dataprovider',
-						'script' => 'wizard_edit.php',
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'notNewRecords' => 1,
@@ -126,7 +128,9 @@ return array(
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_datafilter',
-						'script' => 'wizard_edit.php',
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'notNewRecords' => 1,
@@ -167,7 +171,9 @@ return array(
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_dataprovider',
-						'script' => 'wizard_edit.php',
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'notNewRecords' => 1,
@@ -208,7 +214,9 @@ return array(
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_datafilter',
-						'script' => 'wizard_edit.php',
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'notNewRecords' => 1,
@@ -230,7 +238,7 @@ return array(
 		),
 	),
 	'types' => array(
-		'0' => array('showitem' => 'hidden;;;;1-1-1, title;;1;;2-2-2,tx_displaycontroller_provider;;' . $_EXTKEY . '_1;;2-2-2,  tx_displaycontroller_provider2;;' . $_EXTKEY . '_2;;2-2-2, tx_displaycontroller_emptyprovider2 ')
+		'0' => array('showitem' => 'hidden;;;;1-1-1, title;;1;;2-2-2,tx_displaycontroller_provider;; displaycontroller_advanced_1;;2-2-2,  tx_displaycontroller_provider2;; displaycontroller_advanced_2;;2-2-2, tx_displaycontroller_emptyprovider2 ')
 	),
 	'palettes' => array(
 		$_EXTKEY . '_1' => array('showitem' => 'tx_displaycontroller_datafilter, tx_displaycontroller_emptyfilter'),

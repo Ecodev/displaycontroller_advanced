@@ -36,7 +36,9 @@ $tempColumns = array(
 				'edit' => array(
 					'type' => 'popup',
 					'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_dataconsumer',
-					'script' => 'wizard_edit.php',
+					'module' => [
+						'name' => 'wizard_edit',
+					],
 					'icon' => 'edit2.gif',
 					'popup_onlyOpenIfSelected' => 1,
 					'notNewRecords' => 1,
@@ -118,29 +120,33 @@ if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('tagpackprovide
 }
 
 // Add a wizard for adding a dataquery
-$addDataqueryWizard = array(
+$addDataqueryWizard = [
 	'type' => 'script',
 	'title' => 'LLL:EXT:dataquery/locallang_db.xml:wizards.add_dataquery',
-	'script' => 'wizard_add.php',
+	'module' => [
+		'name' => 'wizard_add',
+	],
 	'icon' => 'EXT:dataquery/res/icons/add_dataquery_wizard.gif',
-	'params' => array(
+	'params' => [
 		'table' => 'tx_dataquery_queries',
 		'pid' => '###CURRENT_PID###',
 		'setValue' => 'append'
-	)
-);
+	]
+];
 $GLOBALS['TCA']['tx_displaycontrolleradvanced_providergroup']['columns']['tx_displaycontroller_provider']['config']['wizards']['add_dataquery'] = $addDataqueryWizard;
 
-$addDatafilteryWizard = array(
+$addDatafilteryWizard = [
 	'type' => 'script',
 	'title' => 'LLL:EXT:datafilter/locallang_db.xml:wizards.add_datafilter',
-	'script' => 'wizard_add.php',
+	'module' => [
+		'name' => 'wizard_add',
+	],
 	'icon' => 'EXT:datafilter/res/icons/add_datafilter_wizard.gif',
-	'params' => array(
+	'params' => [
 		'table' => 'tx_datafilter_filters',
 		'pid' => '###CURRENT_PID###',
 		'setValue' => 'append'
-	)
-);
+	]
+];
 $GLOBALS['TCA']['tx_displaycontrolleradvanced_providergroup']['columns']['tx_displaycontroller_datafilter']['config']['wizards']['add_datafilter'] = $addDatafilteryWizard;
 $GLOBALS['TCA']['tx_displaycontrolleradvanced_providergroup']['columns']['tx_displaycontroller_datafilter2']['config']['wizards']['add_datafilter2'] = $addDatafilteryWizard;

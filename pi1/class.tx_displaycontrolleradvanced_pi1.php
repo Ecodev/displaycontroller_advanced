@@ -13,10 +13,12 @@
  * The TYPO3 project - inspiring people to share!
  */
 
+use Tesseract\DisplaycontrollerAdvanced\Controller\DisplayControllerAdvanced;
+
 /**
  * Plugin 'Display Controller (cached)' for the 'displaycontroller_advanced' extension.
  */
-class tx_displaycontrolleradvanced_pi1 extends tx_displaycontrolleradvanced {
+class tx_displaycontrolleradvanced_pi1 extends DisplayControllerAdvanced {
 	public $scriptRelPath	= 'pi1/class.tx_displaycontrolleradvanced_pi1.php';	// Path to this script relative to the extension dir.
 	public $pi_checkCHash	= TRUE;
 }
