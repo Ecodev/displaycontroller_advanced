@@ -320,7 +320,7 @@ class DisplayControllerAdvanced extends PluginControllerBase
             // instantiate the default class
             if ($debugger === NULL || !($debugger instanceof Debugger)) {
                 $debugger = GeneralUtility::makeInstance(
-                    '\Tesseract\Displaycontroller\Utility\Debugger',
+                    'Tesseract\Displaycontroller\Utility\Debugger',
                     $GLOBALS['TSFE']->getPageRenderer()
                 );
             }
