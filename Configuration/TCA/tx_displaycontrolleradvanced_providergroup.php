@@ -55,7 +55,7 @@ return [
         ],
         'title' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:dataquery/locallang_db.xml:tx_dataquery_queries.title',
+            'label' => 'LLL:EXT:dataquery/Resources/Private/Language/locallang_db.xlf:tx_dataquery_queries.title',
             'config' => [
                 'type' => 'input',
                 'size' => '30',
@@ -64,7 +64,8 @@ return [
         ],
         'tx_displaycontroller_provider' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_provider',
+            'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_provider',
+
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -82,7 +83,7 @@ return [
                 'wizards' => [
                     'edit' => [
                         'type' => 'popup',
-                        'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_dataprovider',
+                        'title' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:wizards.edit_dataprovider',
                         'module' => [
                             'name' => 'wizard_edit',
                         ],
@@ -96,20 +97,20 @@ return [
         ],
 //		'tx_displaycontroller_filtertype' => array (
 //			'exclude' => 0,
-//			'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_filtertype',
+//			'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_filtertype',
 //			'config' => array (
 //				'type' => 'radio',
 //				'items' => array (
-//					array('LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_filtertype.I.0', ''),
-//					array('LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_filtertype.I.1', 'single'),
-//					array('LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_filtertype.I.2', 'list'),
-//					array('LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_filtertype.I.3', 'filter'),
+//					array('LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_filtertype.I.0', ''),
+//					array('LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_filtertype.I.1', 'single'),
+//					array('LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_filtertype.I.2', 'list'),
+//					array('LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_filtertype.I.3', 'filter'),
 //				),
 //			)
 //		),
         'tx_displaycontroller_datafilter' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_datafilter',
+            'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_datafilter',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -127,7 +128,7 @@ return [
                 'wizards' => [
                     'edit' => [
                         'type' => 'popup',
-                        'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_datafilter',
+                        'title' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:wizards.edit_datafilter',
                         'module' => [
                             'name' => 'wizard_edit',
                         ],
@@ -141,18 +142,18 @@ return [
         ],
         'tx_displaycontroller_emptyfilter' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter',
+            'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter',
             'config' => [
                 'type' => 'radio',
                 'items' => [
-                    ['LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter.I.0', ''],
-                    ['LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter.I.1', 'all'],
+                    ['LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter.I.0', ''],
+                    ['LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter.I.1', 'all'],
                 ],
             ]
         ],
         'tx_displaycontroller_provider2' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_provider2',
+            'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_provider2',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -170,7 +171,7 @@ return [
                 'wizards' => [
                     'edit' => [
                         'type' => 'popup',
-                        'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_dataprovider',
+                        'title' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:wizards.edit_dataprovider',
                         'module' => [
                             'name' => 'wizard_edit',
                         ],
@@ -184,18 +185,18 @@ return [
         ],
         'tx_displaycontroller_emptyprovider2' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyprovider2',
+            'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyprovider2',
             'config' => [
                 'type' => 'radio',
                 'items' => [
-                    ['LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter.I.0', ''],
-                    ['LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter.I.1', 'all'],
+                    ['LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter.I.0', ''],
+                    ['LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter.I.1', 'all'],
                 ],
             ]
         ],
         'tx_displaycontroller_datafilter2' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_datafilter2',
+            'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_datafilter2',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -213,7 +214,7 @@ return [
                 'wizards' => [
                     'edit' => [
                         'type' => 'popup',
-                        'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_datafilter',
+                        'title' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:wizards.edit_datafilter',
                         'module' => [
                             'name' => 'wizard_edit',
                         ],
@@ -227,18 +228,18 @@ return [
         ],
         'tx_displaycontroller_emptyfilter2' => [
             'exclude' => 0,
-            'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter',
+            'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter',
             'config' => [
                 'type' => 'radio',
                 'items' => [
-                    ['LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter.I.0', ''],
-                    ['LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_emptyfilter.I.1', 'all'],
+                    ['LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter.I.0', ''],
+                    ['LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_emptyfilter.I.1', 'all'],
                 ],
             ]
         ],
     ],
     'types' => [
-        '0' => ['showitem' => 'hidden;;;;1-1-1, title;;1;;2-2-2,tx_displaycontroller_provider;; displaycontroller_advanced_1;;2-2-2,  tx_displaycontroller_provider2;; displaycontroller_advanced_2;;2-2-2, tx_displaycontroller_emptyprovider2 ']
+        '0' => ['showitem' => 'hidden, title,tx_displaycontroller_provider;;displaycontroller_advanced_1;;2-2-2,  tx_displaycontroller_provider2;;displaycontroller_advanced_2;;2-2-2, tx_displaycontroller_emptyprovider2 ']
     ],
     'palettes' => [
         'displaycontroller_advanced_1' => ['showitem' => 'tx_displaycontroller_datafilter, tx_displaycontroller_emptyfilter'],

@@ -16,7 +16,7 @@ if (!defined('TYPO3_MODE')) {
 $tempColumns = array(
 	'tx_displaycontroller_consumer' => array(
 		'exclude' => 0,
-		'label' => 'LLL:EXT:displaycontroller/locallang_db.xml:tt_content.tx_displaycontroller_consumer',
+		'label' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tt_content.tx_displaycontroller_consumer',
 		'config' => array(
 			'type' => 'group',
 			'internal_type' => 'db',
@@ -35,7 +35,7 @@ $tempColumns = array(
 			'wizards' => array(
 				'edit' => array(
 					'type' => 'popup',
-					'title' => 'LLL:EXT:displaycontroller/locallang_db.xml:wizards.edit_dataconsumer',
+					'title' => 'LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:wizards.edit_dataconsumer',
 					'module' => [
 						'name' => 'wizard_edit',
 					],
@@ -61,7 +61,7 @@ $tempColumns = array(
 
 // Define showitem property for both plug-ins
 $showItem = 'CType;;4;button,hidden,1-1-1, header;;3;;2-2-2,linkToTop;;;;3-3-3';
-$showItem .= ', --div--;LLL:EXT:displaycontroller/locallang_db.xml:tabs.dataobjects, tx_displaycontroller_consumer;;;;1-1-1, tx_displaycontrolleradvanced_providergroup;;;;2-2-2';
+$showItem .= ', --div--;LLL:EXT:displaycontroller/Resources/Private/Language/locallang_db.xlf:tabs.dataobjects, tx_displaycontroller_consumer;;;;1-1-1, tx_displaycontrolleradvanced_providergroup;;;;2-2-2';
 $showItem .= ', --div--;LLL:EXT:cms/locallang_tca.xml:pages.tabs.access, starttime, endtime';
 
 $GLOBALS['TCA']['tt_content']['types'][$_EXTKEY . '_pi1']['showitem'] = $showItem;
@@ -73,8 +73,8 @@ $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$_EXTKEY . '_pi1'] = '
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes'][$_EXTKEY . '_pi2'] = 'extensions-displaycontroller_advanced-type-controller';
 
 // Register icon in the BE and for FE editing (code taken from TemplaVoilà)
-if (TYPO3_MODE == 'BE' ||
-	(TYPO3_MODE == 'FE' && isset($GLOBALS['BE_USER']) && method_exists($GLOBALS['BE_USER'], 'isFrontendEditingActive') && $GLOBALS['BE_USER']->isFrontendEditingActive())
+if (TYPO3_MODE === 'BE' ||
+	(TYPO3_MODE === 'FE' && isset($GLOBALS['BE_USER']) && method_exists($GLOBALS['BE_USER'], 'isFrontendEditingActive') && $GLOBALS['BE_USER']->isFrontendEditingActive())
 ) {
 	$icons = array(
 		'type-controller' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Images/displaycontroller_advanced_typeicon.png',
