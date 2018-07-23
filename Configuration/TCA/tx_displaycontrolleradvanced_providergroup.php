@@ -157,7 +157,7 @@ return [
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
-                'allowed' => (isset($GLOBALS['TCA']['tt_content']['columns']['tx_displaycontroller_provider2']['config']['allowed'])) ? $GLOBALS['TCA']['tt_content']['columns']['tx_displaycontroller_provider2']['config']['allowed'] : '',
+                'allowed' => 'tx_dataquery_queries',
                 'size' => 1,
                 'minitems' => 0,
                 'maxitems' => 1,
