@@ -18,6 +18,7 @@ use Tesseract\Displaycontroller\Utility\Debugger;
 use Tesseract\Tesseract\Component\DataProviderInterface;
 use Tesseract\Tesseract\Frontend\PluginControllerBase;
 use Tesseract\Tesseract\Tesseract;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -311,17 +312,21 @@ class DisplayControllerAdvanced extends PluginControllerBase
             $debugger = NULL;
             // If a custom debugging class is declared, get an instance of it
             if (!empty($this->extensionConfiguration['debugger'])) {
+                /** @var PageRenderer $pageRenderer */
+                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
                 $debugger = GeneralUtility::makeInstance(
                     $this->extensionConfiguration['debugger'],
-                    $GLOBALS['TSFE']->getPageRenderer()
+                    $pageRenderer
                 );
             }
             // If no custom debugger class is defined or if it was not of the right type,
             // instantiate the default class
             if ($debugger === NULL || !($debugger instanceof Debugger)) {
+                /** @var PageRenderer $pageRenderer */
+                $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
                 $debugger = GeneralUtility::makeInstance(
                     'Tesseract\Displaycontroller\Utility\Debugger',
-                    $GLOBALS['TSFE']->getPageRenderer()
+                    $pageRenderer
                 );
             }
             $content = $debugger->render($this->messageQueue) . $content;
@@ -341,7 +346,7 @@ class DisplayControllerAdvanced extends PluginControllerBase
         // Define rank based on call parameter
         $rank = 1;
         $checkField = 'tx_displaycontroller_emptyfilter';
-        if ($type == 'secondary') {
+        if ($type === 'secondary') {
             $rank = 2;
             $checkField = 'tx_displaycontroller_emptyfilter2';
         }
