@@ -11,7 +11,6 @@ $EM_CONF[$_EXTKEY] = [
         [
             'depends' =>
                 [
-                    'cms' => '',
                     'typo3' => '7.6.0-8.7.99',
                     'tesseract' => '1.4.0-0.0.0',
                     'displaycontroller' => '0.0.0-0.0.0',
